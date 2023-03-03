@@ -2,7 +2,8 @@
 Exercício 09 da seção de estrutura sequencial da Python Brasil:
 https://wiki.python.org.br/EstruturaSequencial
 
-Faça um Programa que peça a temperatura em graus Fahrenheit, transforme e mostre a temperatura em graus Celsius.
+Faça um Programa que peça a temperatura em graus Fahrenheit, transforme e
+mostre a temperatura em graus Celsius.
 C = 5 * ((F-32) / 9)
 Mostrar apenas valor inteiro da temperatura
 
@@ -19,3 +20,6 @@ Mostrar apenas valor inteiro da temperatura
 
 def transformar_para_celsius():
     """Escreva aqui em baixo a sua solução"""
+    fahrenheit = float(input("Informe a temperatura em graus Fahrenheit:"))
+    celsius = 5 * ((fahrenheit - 32) / 9)
+    print(f"Essa temperatura é de {celsius:.0f} Celsius")
