@@ -53,3 +53,35 @@ até R$ 99999,99
 
 def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
     """Escreva aqui em baixo a sua solução"""
+    salario_bruto = valor_hora * horas_trabalhadas
+
+    if salario_bruto <= 200:
+        ir_percentual = 0
+    elif salario_bruto <= 1500:
+        ir_percentual = 5
+    elif salario_bruto <= 2500:
+        ir_percentual = 10
+    else:
+        ir_percentual = 20
+
+    ir = salario_bruto * (1 * ir_percentual / 100)
+    inss = salario_bruto * 0.1
+    sindicato = salario_bruto * 0.03
+    fgts = salario_bruto * 0.11
+    total_descontos = ir + inss + sindicato
+    salario_liquido = salario_bruto - total_descontos
+
+    prenchimento = ''
+    if valor_hora < 10:
+        prenchimento = '  '
+    elif valor_hora < 100:
+        prenchimento = ' '
+    print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas:.0f})  {prenchimento} : R$ {salario_bruto:8.2f}')
+    prenchimento = ' ' if ir_percentual < 10 else '' 
+    print(f'(-) IR ({ir_percentual}%)  {prenchimento}                     : R$ {ir:8.2f}')
+    print(f'(-) INSS (10%)                     : R$ {inss:8.2f}')
+    print(f'(-) Sindicato (3%)                 : R$ {sindicato:8.2f}')
+    print(f'FGTS (11%)                         : R$ {fgts:8.2f}')
+    print(f'Total de descontos                 : R$ {total_descontos:8.2f}')
+    print(f'Salário Liquido                    : R$ {salario_liquido:8.2f}')
+

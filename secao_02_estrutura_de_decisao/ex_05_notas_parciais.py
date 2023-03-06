@@ -18,6 +18,14 @@ Obs: 0 <= nota <= 10
     'Aprovado com Distinção'
 """
 
-
 def notas_parciais(nota_1, nota_2):
     """Escreva aqui em baixo a sua solução"""
+    nota_media = (nota_1 + nota_2) / 2
+
+    if nota_media == 10:
+        print("'Aprovado com Distinção'")
+    elif nota_media >= 7:
+        print("'Aprovado'")
+    else:
+        print("'Reprovado'")
+
