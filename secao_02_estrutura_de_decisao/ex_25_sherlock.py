@@ -33,3 +33,16 @@ Caso contrário, ele será classificado como "Inocente".
 
 def investigar(telefonou: str, estava_no_local: str, mora_perto: str, devia: str, trabalhou: str, ):
     """Escreva aqui em baixo a sua solução"""
+    lista = [telefonou, estava_no_local, mora_perto, devia, trabalhou]
+    numero_respostas_positivas = len([resposta for resposta in lista 
+                                      if resposta == 'Sim'])
+
+    match numero_respostas_positivas:
+        case 5:
+            print("'Assassino'")
+        case 3 | 4:
+            print("'Cúmplice'")
+        case 2:
+            print("'Suspeito'")
+        case _:
+            print("'Inocente'")
