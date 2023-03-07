@@ -27,81 +27,67 @@ uma nota de 5 e quatro notas de 1.
 
 def calcular_troco(valor: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+    if valor <= 0:
+        return None
+
+    descritivo = "'"
+
     notas_100 = valor // 100
     valor_faltante = valor % 100
-
+    if notas_100 > 0:
+        if notas_100 == 1:
+            descritivo += "1 nota de R$ 100"
+        else:
+            descritivo += f"{notas_100} notas de R$ 100"
+    
     notas_50 = valor_faltante // 50
-    valor_faltante = valor_faltante % 50
+    valor_faltante = valor_faltante % 50 
+    if notas_50 > 0:
+        if descritivo != "'":
+            if valor_faltante > 0:
+                descritivo += ", "
+            else:
+                descritivo += " e "
+        if notas_50 == 1:
+            descritivo += "1 nota de R$ 50"
+        else:
+            descritivo += f"{notas_50} notas de R$ 50"
 
     notas_10 = valor_faltante // 10
     valor_faltante = valor_faltante % 10
+    if notas_10 > 0:
+        if descritivo != "'":
+            if valor_faltante > 0:
+                descritivo += ", "
+            else:
+                descritivo += " e "
+        if notas_10 == 1:
+            descritivo += "1 nota de R$ 10"
+        else:
+            descritivo += f"{notas_10} notas de R$ 10"
 
     notas_5 = valor_faltante // 5
-    notas_1 = valor_faltante % 5
+    valor_faltante = valor_faltante % 5
+    if notas_5 > 0:
+        if descritivo != "'":
+            if valor_faltante > 0:
+                descritivo += ", "
+            else:
+                descritivo += " e "
+        if notas_5 == 1:
+            descritivo += "1 nota de R$ 5"
+        else:
+            descritivo += f"{notas_5} notas de R$ 5"
 
-    descritivo = "'"
-    if notas_100 == 1:
-        descritivo += "1 nota de R$ 100"
-    elif notas_100 > 1:
-        descritivo += f"{notas_100} notas de R$ 100"
-    
-    lista_positivos = [num for num in [notas_50, notas_10, notas_5, notas_1] 
-                       if num > 0]
-    if len(lista_positivos) == 0:
-        descritivo += "'"
-        print(descritivo)
-        return
-    elif len(lista_positivos) == 1 and notas_100> 0:
-        descritivo += " e "
-    elif notas_100 > 0:
-        descritivo += ", "
+    notas_1 = valor_faltante
+    if notas_1 > 0:
+        if descritivo != "'":
+            descritivo += " e "
+        if notas_1 == 1:
+            descritivo += "1 nota de R$ 1"
+        else:
+            descritivo += f"{notas_1} notas de R$ 1"
 
-    if notas_50 == 1:
-        descritivo += "1 nota de R$ 50"
-    elif notas_50 > 1:
-        descritivo += f"{notas_50} notas de R$ 50"
-    
-    lista_positivos = [num for num in [notas_10, notas_5, notas_1] 
-                       if num > 0]
-    if len(lista_positivos) == 0:
-        descritivo += "'"
-        print(descritivo)
-        return
-    elif len(lista_positivos) == 1 and notas_50 > 0:
-        descritivo += " e "
-    elif notas_50 > 0:
-        descritivo += ", "
-
-    if notas_10 == 1:
-        descritivo += "1 nota de R$ 10"
-    elif notas_10 > 1:
-        descritivo += f"{notas_10} notas de R$ 10"
-
-    if notas_5 == 0 and notas_1 == 0:
-        descritivo += "'"
-        print(descritivo)
-        return
-    elif notas_10 > 0 and notas_5 > 0 and notas_1 > 0:
-        descritivo += ", "
-    elif notas_10 > 0:
-        descritivo += " e "
-
-    if notas_5 == 1:
-        descritivo += "1 nota de R$ 5"
-    elif notas_5 > 1:
-        descritivo += f"{notas_5} notas de R$ 5"
-
-    if notas_1 == 0:
-        descritivo += "'"
-        print(descritivo)
-        return
-    elif notas_5 > 0 and notas_1 > 0:
-        descritivo += " e "
-
-    if notas_1 == 1:
-        descritivo += "1 nota de R$ 1"
-    elif notas_1 > 1:
-        descritivo += f"{notas_1} notas de R$ 1"
     descritivo += "'"
     print(descritivo)
 
