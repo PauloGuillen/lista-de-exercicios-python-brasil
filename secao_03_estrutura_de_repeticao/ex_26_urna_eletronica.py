@@ -36,3 +36,24 @@ uma eleição existem três candidatos. Faça um programa que peça o número to
 
 def calcular_votos(*votos):
     """Escreva aqui em baixo a sua solução"""
+ 
+    """ Esta é uma solução mais geral, mas não passa no doctext
+
+    total_votantes = len(votos)
+    lista_de_votos = list(votos)
+    conjunto_candidatos = set(lista_de_votos)
+
+    print(f'Votantes: {total_votantes}')
+    for candidato in conjunto_candidatos:
+        print(f'Votos no candidato {candidato}: {lista_de_votos.count(candidato)}')
+    """
+    total_votantes = len(votos)
+    lista_de_votos = list(votos)
+    tupla_de_candidatos = ('corrupto', 'mentiroso', 'rouba, mas faz')
+  
+    print(f'Votantes: {total_votantes}')
+    for candidato in tupla_de_candidatos:
+        print(f'Votos no candidato {candidato}: {lista_de_votos.count(candidato)}')
+ 
+
+#calcular_votos('corrupto', 'mentiroso', 'rouba, mas faz', 'corrupto', 'mentiroso', 'rouba, mas faz')

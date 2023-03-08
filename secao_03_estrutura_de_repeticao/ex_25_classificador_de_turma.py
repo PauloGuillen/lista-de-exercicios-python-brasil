@@ -20,7 +20,17 @@ Mostre a média de idade com uma casa decimal.
     'A turma é idosa, pois a média é de 67.0 anos'
 
 """
-
+from statistics import mean
 
 def classifcar_turma(*idades) -> str:
     """Escreva aqui em baixo a sua solução"""
+    faixa_etaria = ''
+    media = mean(idades)
+    if media <= 25.26:
+        faixa_etaria = 'jovem'
+    elif media < 60:
+        faixa_etaria = 'adulta'
+    else:
+        faixa_etaria = 'idosa'
+    
+    return f'A turma é {faixa_etaria}, pois a média é de {media:.1f} anos'

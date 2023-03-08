@@ -29,7 +29,7 @@ def calcular_estatisticas(*numeros) -> str:
             menor = numero
         soma += numero
 
-    resposta = f'Maior valor: {maior if maior != None "não existe"}'    
-    print(resposta)
-
-calcular_estatisticas(1, 2, -1)
+    if maior is None:
+        return 'Maior valor: não existe. Menor valor: não existe. Soma: 0'   
+    else:
+        return f'Maior valor: {maior}. Menor valor: {menor}. Soma: {soma}'
