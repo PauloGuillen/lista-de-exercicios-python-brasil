@@ -19,6 +19,6 @@ def vogal_ou_consoante(letra):
     """Escreva aqui em baixo a sua solução"""
     letra_maiuscula = letra.upper()
     if letra_maiuscula in 'AEIOU':
-        print("'vogal'")
+        return 'vogal'
     else:
-        print("'consoante'")
+        return 'consoante'

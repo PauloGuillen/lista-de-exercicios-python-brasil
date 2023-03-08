@@ -28,10 +28,10 @@ def cumprimentar(turno: str):
     turno_maisculo = turno.upper()
     match turno_maisculo:
         case 'M':
-            print("'Bom dia!'")
+            return 'Bom dia!'
         case 'V':
-            print("'Boa tarde!'")
+            return 'Boa tarde!'
         case 'N':
-            print("'Boa noite!'")
+            return 'Boa noite!'
         case _:
-            print("'Valor Inválido!'")
+            return 'Valor Inválido!'

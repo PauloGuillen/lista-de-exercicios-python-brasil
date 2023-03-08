@@ -30,20 +30,20 @@ def calcular_troco(valor: int) -> str:
     if valor <= 0:
         return None
 
-    descritivo = "'"
+    descritivo = ''
 
     notas_100 = valor // 100
     valor_faltante = valor % 100
     if notas_100 > 0:
         if notas_100 == 1:
-            descritivo += "1 nota de R$ 100"
+            descritivo += '1 nota de R$ 100'
         else:
-            descritivo += f"{notas_100} notas de R$ 100"
+            descritivo += f'{notas_100} notas de R$ 100'
     
     notas_50 = valor_faltante // 50
     valor_faltante = valor_faltante % 50 
     if notas_50 > 0:
-        if descritivo != "'":
+        if descritivo != '':
             if valor_faltante > 0:
                 descritivo += ", "
             else:
@@ -56,7 +56,7 @@ def calcular_troco(valor: int) -> str:
     notas_10 = valor_faltante // 10
     valor_faltante = valor_faltante % 10
     if notas_10 > 0:
-        if descritivo != "'":
+        if descritivo != '':
             if valor_faltante > 0:
                 descritivo += ", "
             else:
@@ -69,7 +69,7 @@ def calcular_troco(valor: int) -> str:
     notas_5 = valor_faltante // 5
     valor_faltante = valor_faltante % 5
     if notas_5 > 0:
-        if descritivo != "'":
+        if descritivo != '':
             if valor_faltante > 0:
                 descritivo += ", "
             else:
@@ -81,14 +81,11 @@ def calcular_troco(valor: int) -> str:
 
     notas_1 = valor_faltante
     if notas_1 > 0:
-        if descritivo != "'":
+        if descritivo != '':
             descritivo += " e "
         if notas_1 == 1:
             descritivo += "1 nota de R$ 1"
         else:
             descritivo += f"{notas_1} notas de R$ 1"
 
-    descritivo += "'"
-    print(descritivo)
-
-#calcular_troco(588)
+    return descritivo

@@ -33,8 +33,8 @@ def calcular_dia_da_semana(numero: int):
                       5: 'Quinta', 6: 'Sexta', 7:'Sábado'}
 
     try:
-      print(f"'{dias_da_semana[numero]}'")
+      return f'{dias_da_semana[numero]}'
     except KeyError:
-       print("'Dia Inválido'")
+      return 'Dia Inválido'
     
     

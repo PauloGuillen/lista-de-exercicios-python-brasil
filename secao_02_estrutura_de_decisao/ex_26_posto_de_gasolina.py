@@ -41,7 +41,7 @@ def calcular_abastecimento(litros_de_combustivel: float, tipo_de_combustivel: st
     valor = 0
     desconto = 0
 
-    resultado = f"'{litros_de_combustivel} litro(s) de {tipos[tipo_de_combustivel]} custa(m): "
+    resultado = f'{litros_de_combustivel} litro(s) de {tipos[tipo_de_combustivel]} custa(m): '
 
     if tipo_de_combustivel == 'A':
         valor = litros_de_combustivel * preco_alcool
@@ -56,7 +56,7 @@ def calcular_abastecimento(litros_de_combustivel: float, tipo_de_combustivel: st
         else:
             desconto = 4
 
-    resultado += f"R$ {valor:.2f}. Com {desconto}% de desconto, "
-    resultado += f"fica R$ {valor * (1 - desconto / 100):.2f}'"
+    resultado += f'R$ {valor:.2f}. Com {desconto}% de desconto, '
+    resultado += f'fica R$ {valor * (1 - desconto / 100):.2f}'
 
-    print(resultado)
+    return resultado

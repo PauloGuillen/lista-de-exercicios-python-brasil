@@ -39,10 +39,10 @@ def investigar(telefonou: str, estava_no_local: str, mora_perto: str, devia: str
 
     match numero_respostas_positivas:
         case 5:
-            print("'Assassino'")
+            return 'Assassino'        
         case 3 | 4:
-            print("'Cúmplice'")
+            return 'Cúmplice'        
         case 2:
-            print("'Suspeito'")
+            return 'Suspeito'        
         case _:
-            print("'Inocente'")
+            return 'Inocente'        

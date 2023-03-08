@@ -24,8 +24,8 @@ def calcular_status(nota_1, nota_2, nota_3):
     media = (nota_1 + nota_2 + nota_3) / 3
 
     if media == 10:
-        print("'Aprovado com Distinção'")
+        return 'Aprovado com Distinção'
     elif media >= 7:
-        print("'Aprovado'")
+        return 'Aprovado'
     else:
-        print("'Reprovado'")
+        return 'Reprovado'

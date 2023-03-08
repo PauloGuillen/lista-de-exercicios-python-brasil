@@ -30,10 +30,10 @@ def classificar_triangulo(lado_a: float, lado_b: float, lado_c: float):
     lados = sorted([lado_a, lado_b, lado_c], reverse=True)
 
     if lados[0] > lados[1] + lados[2]:
-        print("'Não é um triângulo'")
+        return 'Não é um triângulo'
     elif lados[0] == lados[1] == lados[2]:
-        print("'Triângulo Equilátero'")
+        return 'Triângulo Equilátero'
     elif lados[0] == lados[1] or lados[1] == lados[2]:
-        print("'Triângulo Isósceles'")
+        return 'Triângulo Isósceles'
     else:
-        print("'Triângulo Escaleno'")
+        return 'Triângulo Escaleno'

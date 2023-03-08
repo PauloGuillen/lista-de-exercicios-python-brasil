@@ -73,9 +73,9 @@ def calcular_preco_da_carne(tipo_de_carne: str, kilos_de_carne: int, forma_de_pa
         desconto = valor * 0.05
     total_liquido = valor - desconto
 
-    resposta = f"'{kilos_de_carne} kg de {tipo_de_carne} a R$ {preco_kg:.2f}/kg saem a R$ {valor:.2f}. "
+    resposta = f'{kilos_de_carne} kg de {tipo_de_carne} a R$ {preco_kg:.2f}/kg saem a R$ {valor:.2f}. '
     if desconto > 0:
-        resposta += f"Com desconto de 5% pelo pagamento feito com cartão tabajara, fica R$ {total_liquido:.2f}'"
+        resposta += f'Com desconto de 5% pelo pagamento feito com cartão tabajara, fica R$ {total_liquido:.2f}'
     else:
-        resposta += f"Não há desconto, pagamento feito com {forma_de_pagamento}'"
-    print(resposta)
+        resposta += f'Não há desconto, pagamento feito com {forma_de_pagamento}'
+    return resposta

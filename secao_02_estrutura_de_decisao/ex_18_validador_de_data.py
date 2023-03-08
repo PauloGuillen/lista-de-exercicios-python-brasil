@@ -27,6 +27,7 @@ def validar_data(data: str):
     """Escreva aqui em baixo a sua solução"""
     try:
         datetime.strptime(data, "%d/%m/%Y")
-        print("'Data válida'")
+        return 'Data válida'
     except:
-        print("'Data inválida'")
+        return 'Data inválida'
+ 

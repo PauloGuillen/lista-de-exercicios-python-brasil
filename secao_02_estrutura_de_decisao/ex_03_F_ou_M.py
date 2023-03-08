@@ -20,8 +20,8 @@ def f_ou_m(sexo):
     sexo = str(sexo).upper()
     """Escreva aqui em baixo a sua solução"""
     if sexo == 'F':
-        print("'F - Feminino'")
+        return 'F - Feminino'
     elif sexo == 'M':
-        print("'M - Masculino'")
+        return 'M - Masculino'
     else:
-        print("'Sexo inválido'")
+        return 'Sexo inválido'
