@@ -21,3 +21,10 @@ mensagem de erro e voltando a pedir as informações.
 
 def validar_senha():
     """Escreva aqui em baixo a sua solução"""
+    while True:
+        login = input('login: ')
+        senha = input('senha: ')
+        if login != senha:
+            print(f"'Cadastro realizado com suceso, seu login é {login}'")
+            break
+        print('Senha deve ser diferente do login')
