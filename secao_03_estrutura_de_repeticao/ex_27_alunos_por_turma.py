@@ -12,10 +12,10 @@ Arredonde o valor da média para baixo.
     >>> ex_27_alunos_por_turma.calcular_media_de_alunos_por_turma()
     Número de turmas: 1
     Média de alunos por turma: 1
-    >>> entradas = ['10', '20', '30', '40', '-1', '4']
+    >>> entradas = ['10', '20', '30', '40', '-1', '5']
     >>> ex_27_alunos_por_turma.input = lambda k: entradas.pop()
     >>> ex_27_alunos_por_turma.calcular_media_de_alunos_por_turma()
-    Número de turmas: 4
+    Número de turmas: 5
     Uma turma deve ter de 1 a 40 alunos, não é possível ter -1 alunos
     Média de alunos por turma: 25
     >>> entradas = ['40', '40', '2']
@@ -23,10 +23,10 @@ Arredonde o valor da média para baixo.
     >>> ex_27_alunos_por_turma.calcular_media_de_alunos_por_turma()
     Número de turmas: 2
     Média de alunos por turma: 40
-    >>> entradas = ['10', '20', '30', '0', '41', '3']
+    >>> entradas = ['10', '20', '30', '0', '41', '5']
     >>> ex_27_alunos_por_turma.input = lambda k: entradas.pop()
     >>> ex_27_alunos_por_turma.calcular_media_de_alunos_por_turma()
-    Número de turmas: 3
+    Número de turmas: 5
     Uma turma deve ter de 1 a 40 alunos, não é possível ter 41 alunos
     Uma turma deve ter de 1 a 40 alunos, não é possível ter 0 alunos
     Média de alunos por turma: 20
@@ -51,7 +51,8 @@ def calcular_media_de_alunos_por_turma():
         else:
             turmas_validas += 1
             total_alunos += numero_alunos
-    
+
+        
     media = floor(total_alunos / turmas_validas)
     print(f'Média de alunos por turma: {media}')  
     

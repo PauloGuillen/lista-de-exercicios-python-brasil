@@ -15,8 +15,6 @@ para registrar a próxima compra.
     >>> entradas = ['-1']  # Encerrando o programa sem nenhuma compra
     >>> ex_31_conveniencia_manuel.input = lambda k: entradas.pop()
     >>> ex_31_conveniencia_manuel.rodar_programa_de_caixa()
-    Lojas Tabajara
-    -------------------
     Programa encerrado!
     >>> entradas = ['2.00', '-1', '1.99']  # Compra de apenas um produto
     >>> ex_31_conveniencia_manuel.input = lambda k: entradas.pop()
@@ -56,3 +54,23 @@ para registrar a próxima compra.
 
 def rodar_programa_de_caixa():
     """Escreva aqui em baixo a sua solução"""
+
+    total_da_compra = 0
+    valor = 0
+    while valor != -1:
+        valor = float(input(f'Informe o valor: '))
+        if valor == 0 or (valor == -1 and total_da_compra > 0):
+            print(f'Lojas Tabajara')
+            print(f'Total     : R$ {total_da_compra:6.2f}')
+            valor_recebido = float(input('Valor recebido: '))
+            print(f'Dinheiro  : R$ {valor_recebido:6.2f}')
+            troco = valor_recebido - total_da_compra
+            print(f'Troco     : R$ {troco:6.2f}')
+            print('-------------------')
+            total_da_compra = 0
+        total_da_compra += valor
+
+    print('Programa encerrado!')
+
+
+#rodar_programa_de_caixa()
