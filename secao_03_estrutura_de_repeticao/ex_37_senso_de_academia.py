@@ -52,7 +52,32 @@ da média das alturas e dos pesos dos clientes
     Media de peso dos clientes: 90.2 kilos
 
 """
-
+from statistics import mean
 
 def rodar_senso():
     """Escreva aqui em baixo a sua solução"""
+    nome = ''
+    lista_nomes = []
+    lista_alturas = []
+    lista_pesos = []
+    while nome != '0':
+        nome = input('Nome: ')
+        if nome != '0':
+            altura = int(input('Altura: '))
+            peso = int(input('Peso: '))
+            lista_nomes.append(nome)
+            lista_alturas.append(altura)
+            lista_pesos.append(peso)
+    
+    alturas_ordenadas = sorted(zip(lista_alturas, lista_nomes))
+    pesos_ordenados = sorted(zip(lista_pesos, lista_nomes))
+
+    print(f'Cliente mais alto: {alturas_ordenadas[-1][1]}, com {alturas_ordenadas[-1][0]} centímetros')
+    print(f'Cliente mais baixo: {alturas_ordenadas[0][1]}, com {alturas_ordenadas[0][0]} centímetros')
+    print(f'Cliente mais magro: {pesos_ordenados[0][1]}, com {pesos_ordenados[0][0]} kilos')
+    print(f'Cliente mais gordo: {pesos_ordenados[-1][1]}, com {pesos_ordenados[-1][0]} kilos')
+    print(f'--------------------------------------------------')
+    print(f'Media de altura dos clientes: {mean(lista_alturas):.1f} centímetros')
+    print(f'Media de peso dos clientes: {mean(lista_pesos):.1f} kilos')
+
+#rodar_senso()

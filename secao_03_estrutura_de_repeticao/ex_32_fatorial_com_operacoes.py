@@ -26,3 +26,15 @@ Ex.: 5!=5.4.3.2.1=120
 
 def calcular_fatorial(n: int):
     """Escreva aqui em baixo a sua solução"""
+
+    print(f'Fatorial de {n}:')
+
+    fat_str = ''
+    fat = 1
+    for i in range(n, 0, -1):
+        if fat_str != '':
+            fat_str += ' . '
+        fat_str += f'{i}'
+        fat *= i
+    fat_str = f'{n}! = ' + fat_str + f' = {fat}'
+    print(fat_str)

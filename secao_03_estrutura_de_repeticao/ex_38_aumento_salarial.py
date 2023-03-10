@@ -30,3 +30,14 @@ Os valores devem ser exibidos com duas casas decimais
 
 def calcular_salarios_anuais(salario: float):
     """Escreva aqui em baixo a sua solução"""
+
+    salario_corrigido = salario
+    aumento_percentual = 1.5
+    ano = 2018
+
+    print(f'Salário em 2018: R$ {salario:.2f}')
+    for i in range(1, 6):
+        salario_corrigido *= 1 + (aumento_percentual / 100)
+        ano += 1
+        print(f'Salário em {ano}: R$ {salario_corrigido:.2f}. Aumento porcentual: {aumento_percentual:.2f}%')
+        aumento_percentual *= 2
