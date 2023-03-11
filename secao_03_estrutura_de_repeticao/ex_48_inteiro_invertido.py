@@ -21,3 +21,9 @@ Exemplo:
 
 def inverter_inteiro(numero):
     """Escreva aqui em baixo a sua solução"""
+    lista_invertida = reversed(str(numero))
+    for n in lista_invertida:
+        print(n, end='')
+    print()
+
+#inverter_inteiro(3454232311243232979128123)

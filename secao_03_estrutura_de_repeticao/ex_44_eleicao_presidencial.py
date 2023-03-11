@@ -90,3 +90,25 @@ from collections import Counter
 
 def apurar_votos(*votos):
     """Escreva aqui em baixo a sua solução"""
+
+    candidatos = {
+        '1': 'Bostonaro',
+        '2': 'Luladrão',
+        '3': 'Dilmanta',
+        '4': 'FHC Isentão',
+        '5': 'Votos Nulos',
+        '6': 'Votos Brancos'
+    }
+
+    votos_apurados = Counter(votos)
+    total_votos = sum(votos_apurados.values())
+
+    print('Código do Candidato Nome do Candidato Votos Porcentagem sobre total')
+    for codigo, nome in candidatos.items():
+        votos = votos_apurados[codigo]
+        percentual = votos / total_votos
+        print(f'{int(codigo)}                   {nome:14}   {votos:2d}     {percentual:>6.1%}')
+        if codigo == '4':
+            print('-------------------------------------------------------------------')
+
+#apurar_votos('1', '2', '3', '4', '5', '6', '5', '6', '5', '6', '5', '6', '5', '6', '5', '6', '5', '6')

@@ -13,7 +13,7 @@ A Média das Notas da Turma com uma casa decimal.
 
 Gabarito da Prova:
 
-01 - A
+01 - A['A','B','C','D','E','E','D','C','B','A' ]
 02 - B
 03 - C
 04 - D
@@ -49,3 +49,28 @@ Gabarito da Prova:
 
 def corrigir(*provas):
     """Escreva aqui em baixo a sua solução"""
+
+    cabarito = ['A','B','C','D','E','E','D','C','B','A' ]
+    total_notas = numero_alunos = 0
+
+    print('Aluno                 Nota')
+    for prova in provas:
+        nota = 0
+        for i in range(11):
+            if i == 0:
+                aluno = prova[0]
+            elif prova[i] == cabarito[i - 1]:
+                nota += 1
+        total_notas += nota
+        numero_alunos += 1
+        if 'maior_nota' not in vars() or nota > maior_nota:
+            maior_nota = nota
+        if 'menor_nota' not in vars() or nota < menor_nota:
+            menor_nota = nota
+
+        print(f'{aluno:6}                {nota:2d}')
+    print('---------------------------')
+    print(f'Média geral: {total_notas / numero_alunos:.1f}')
+    print(f'Maior nota: {maior_nota}')
+    print(f'Menor nota: {menor_nota}')
+    print(f'Total de Alunos: {numero_alunos}')

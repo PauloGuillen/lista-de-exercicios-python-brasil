@@ -109,3 +109,49 @@ comprados.
 
 def fechar_conta(*itens):
     """Escreva aqui em baixo a sua solução"""
+    descricao = {
+        '100': 'Cachorro Quente',
+        '101': 'Bauru Simples',
+        '102': 'Bauru com Ovo',
+        '103': 'Hamburger',
+        '104': 'Cheeseburger',
+        '105': 'Refrigerante'
+    }
+
+    preco = {
+        '100': 1.20,
+        '101': 1.30,
+        '102': 1.50,
+        '103': 1.20,
+        '104': 1.30,
+        '105': 1.00
+    }
+
+    itens_ordenados = sorted(itens)
+    itens_somados = []
+    for codigo, quantidade in itens_ordenados:
+        if len(itens_somados) == 0 or itens_somados[-1][0] != codigo:
+            itens_somados.append([codigo, quantidade])
+        else:
+            itens_somados[-1][1] += quantidade
+
+    quantidade_total = valor_total = 0
+
+    print('_____________________________________________________________________________')
+    print('|                              RESUMO DA CONTA                              |')
+    print('|---------------------------------------------------------------------------|')
+    print('| Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |')   
+
+    for codigo, quantidade in itens_somados:
+        valor = quantidade * preco[codigo]
+        valor_total += valor
+        quantidade_total += quantidade
+
+        print(f'| {descricao[codigo]:15}  | {codigo}    |{preco[codigo]:5.2f}                |         {quantidade:2d} |      {valor:5.2f} |')
+
+    print('|---------------------------------------------------------------------------|')
+    print(f'| Total Geral:                                    |         {quantidade_total:2d} |      {valor_total:5.2f} |')
+    print('-----------------------------------------------------------------------------')
+
+
+#fechar_conta(('100', 1), ('100', 2), ('101', 2), ('102', 3), ('103', 4))
