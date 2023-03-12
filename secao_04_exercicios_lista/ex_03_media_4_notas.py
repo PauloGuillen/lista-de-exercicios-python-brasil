@@ -10,7 +10,9 @@ Faça um Programa que receba 4 notas, mostre as notas e a média na tela.
     'Notas: 10, 14, 16, 26. Média: 16.5'
    
 """
-
+from statistics import mean
 
 def mostrar_notas_e_media(inteiros: list) -> str:
     """Escreva aqui em baixo a sua solução"""
+
+    return f'Notas: {inteiros[0]}, {inteiros[1]}, {inteiros[2]}, {inteiros[3]}. Média: {mean(inteiros):.1f}'

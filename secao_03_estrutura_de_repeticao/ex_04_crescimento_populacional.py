@@ -26,7 +26,6 @@ def calcular_ano_ultrapassagem_populacional() -> str:
         if populacao_a >= populacao_b:
             return(f'População de A, depois de {numeros_anos} ano(s) será de {populacao_a:.0f} pessoas, superando a de B, que será de {populacao_b:.0f} pessoas')
 
-
         numeros_anos += 1
         populacao_a *= fator_crecimento_a
         populacao_b *= fator_crecimento_b

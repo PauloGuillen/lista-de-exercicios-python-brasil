@@ -19,3 +19,12 @@ números IMPARES no vetor impar. Imprima os três vetores.
 
 def separar_em_vertores_par_e_impar(inteiros: list) -> str:
     """Escreva aqui em baixo a sua solução"""
+
+    vetor_par = []
+    vetor_impar = []
+    for i in inteiros:
+        if i % 2 == 0:
+            vetor_par.append(i)
+        else:
+            vetor_impar.append(i)
+    return f'Vetor original: {inteiros}. Vetor com elementos pares: {vetor_par}. Vetor com elementos impares: {vetor_impar}.'
